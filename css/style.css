@@ -26,6 +26,8 @@
   --s4-text-muted:   rgba(255,255,255,0.6);
   --s5-bg:           #f7f9f8;
   --testi-bg:        #fafafa;
+  --s5-text-muted:   #7a8b82;
+  --text-sub:        #7a8b82;
 
   /* Cards */
   --card-grad-dir:   135deg;
@@ -1281,7 +1283,7 @@ body {
 }
 
 .social-btn img {
-  width: 36px; height: 36px;
+  width: 18px; height: 18px;
   object-fit: contain;
   filter: brightness(0) invert(1);
   opacity: 0.75;
