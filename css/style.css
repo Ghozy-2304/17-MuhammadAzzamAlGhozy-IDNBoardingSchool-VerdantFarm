@@ -14,6 +14,7 @@
   --text-muted:      #7a8b82;
   --white:           #ffffff;
   --divider:         #EAEFEC;
+  --grad-button:     linear-gradient(90deg, #3CDA52 0%, #00B26F 100%);
   --grad-brand:      linear-gradient(90deg, #98ea9b 0%, #15e085 35%, #00eef9 100%);
   --font-hero:       "Space Grotesk", sans-serif;
   --font-body:       "Figtree", sans-serif;
@@ -79,6 +80,31 @@ body {
   min-height: 100vh;
   color: var(--dark);
   overflow-x: hidden;
+}
+
+body::before,
+body::after {
+  content: "";
+  position: absolute;
+  width: 680px;
+  height: 680px;
+  border-radius: 1000px;
+  pointer-events: none;
+  z-index: -1;
+  filter: blur(80px);
+}
+
+body::before {
+  background: radial-gradient(circle, rgba(0, 210, 200, 0.1) 0%, rgba(61, 213, 109, 0.25) 100%);
+  top: -200px;
+  left: -200px;
+}
+
+body::after {
+  background: radial-gradient(circle, rgba(0, 210, 200, 0.1) 0%, rgba(61, 213, 109, 0.25) 100%);
+  bottom: -200px;
+  right: -200px;
+  z-index: 100;
 }
 
 /* ══════════════════════════════════════════════════
@@ -339,7 +365,7 @@ body {
   font-size: 15px;
   font-weight: 600;
   color: #fff;
-  background: var(--green);
+  background: var(--grad-button);
   padding: 14px 28px;
   border-radius: 18px;
   text-decoration: none;
@@ -350,7 +376,6 @@ body {
 }
 
 .btn-primary:hover {
-  background: var(--green-dark);
   transform: translateY(-2px);
   box-shadow: 0 10px 32px rgba(61,213,109,0.4);
 }
@@ -473,7 +498,7 @@ body {
 .shift-section {
   width: 100%;
   padding: 110px 80px;
-  background: linear-gradient(160deg, #fafafa 60%, #eaf9f2 100%);
+  background: transparent;
   position: relative;
   overflow: hidden;
 }
@@ -612,7 +637,7 @@ body {
   color: var(--dark);
   margin-bottom: 20px;
 }
-
+.accent,
 .platform-title .grad-word,
 .testi-title .grad-word,
 .cta-title .grad-word {
