@@ -1,230 +1,790 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>VerdantFarm – Transforming Agriculture with AI Technology</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VerdantFarm – Transforming Agriculture with AI Technology</title>
 
-  <!-- Google Fonts: Space Grotesk + Figtree -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Figtree:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <!-- Google Fonts: Space Grotesk + Figtree -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Figtree:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Font Awesome 5 -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+    <!-- Font Awesome 5 -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
 
-  <!-- jQuery -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- ═══════════════ NAVBAR ═══════════════ -->
+    <nav class="navbar" id="navbar">
+      <a href="#" class="nav-logo">
+        <img src="resource/Logo.png" alt="VerdantFarm Logo" class="img-logo" />
+        <span class="nav-logo-text">Verdant<span>Farm</span></span>
+      </a>
 
-  <!-- ═══════════════ NAVBAR ═══════════════ -->
-  <nav class="navbar" id="navbar">
-    <a href="#" class="nav-logo">
-      <img
-        src="resource/Logo.png"
-        alt="VerdantFarm Logo"
-        class="img-logo"
-      />
-      <span class="nav-logo-text">Verdant<span>Farm</span></span>
-    </a>
+      <ul class="nav-links" id="nav-links">
+        <li>
+          <a href="#home" class="nav-link active" data-section="home">Home</a>
+        </li>
+        <li>
+          <a href="#solutions" class="nav-link" data-section="solutions"
+            >Solutions</a
+          >
+        </li>
+        <li>
+          <a href="#features" class="nav-link" data-section="features"
+            >Features</a
+          >
+        </li>
+        <li>
+          <a href="#results" class="nav-link" data-section="results">Results</a>
+        </li>
+        <li>
+          <a href="#testimonials" class="nav-link" data-section="testimonials"
+            >Testimonials</a
+          >
+        </li>
+        <li>
+          <a href="#contact" class="nav-link" data-section="contact">Contact</a>
+        </li>
+      </ul>
 
-    <ul class="nav-links">
-      <li><a href="#" class="active">Home</a></li>
-      <li><a href="#">Solutions</a></li>
-      <li><a href="#">Features</a></li>
-      <li><a href="#">Results</a></li>
-      <li><a href="#">Testimonials</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
+      <a href="#" class="btn-signin">Sign In</a>
+    </nav>
 
-    <a href="#" class="btn-signin">Sign In</a>
-  </nav>
+    <!-- ═══════════════ HERO ═══════════════ -->
+    <section class="hero" id="home">
+      <!-- LEFT -->
+      <div class="hero-left">
+        <h1 class="hero-title">
+          Transforming<br />
+          <span class="accent">Agriculture</span> with<br />
+          AI Technology
+        </h1>
 
-  <!-- ═══════════════ HERO ═══════════════ -->
-  <section class="hero" id="home">
-    <!-- LEFT -->
-    <div class="hero-left">
-      <h1 class="hero-title">
-        Transforming<br>
-        <span class="accent">Agriculture</span> with<br>
-        AI Technology
-      </h1>
+        <p class="hero-sub">
+          Autonomous farm operations powered by deep crop intelligence,
+          predictive analytics, and sustainability optimization. From soil to
+          satellite — VerdantFarm orchestrates every acre in real time.
+        </p>
 
-      <p class="hero-sub">
-        Autonomous farm operations powered by deep crop intelligence,
-        predictive analytics, and sustainability optimization. From soil to
-        satellite — VerdantFarm orchestrates every acre in real time.
-      </p>
-
-      <div class="hero-cta">
-        <a href="#" class="btn-primary">
-          Explore Dashboard <i class="fas fa-arrow-right"></i>
-        </a>
-        <a href="#" class="btn-outline">
-          Start Smart Farming
-        </a>
-      </div>
-
-      <div class="hero-stats">
-        <div class="stat-item">
-          <div class="stat-num">2.4M+</div>
-          <div class="stat-label">Acres Optimized</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-num">38%</div>
-          <div class="stat-label">Yield Uplift</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-num">61%</div>
-          <div class="stat-label">Water Saved</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- RIGHT – Dashboard Image -->
-    <div class="hero-right">
-      <div class="glow-blob"></div>
-
-      <div class="dashboard-wrapper">
-        <!-- Main dashboard image – replace src with your actual screenshot/mockup -->
-        <img
-          class="dashboard-img"
-          src="resource/Hero-banner.png"
-          alt="VerdantFarm Live Dashboard"
-        />
-
-        <!-- Floating badge: CO2 Offset -->
-        <div class="badge-co2">
-          <img src="resource/div.absolute (1).png" alt="">
+        <div class="hero-cta">
+          <a href="#" class="btn-primary">
+            Explore Dashboard <i class="fas fa-arrow-right"></i>
+          </a>
+          <a href="#" class="btn-outline"> Start Smart Farming </a>
         </div>
 
-        <!-- Floating badge: Smart Irrigation -->
-        <div class="badge-irrigation">
-          <img src="resource/div.absolute (5).png" alt="">
+        <div class="hero-stats">
+          <div class="stat-item">
+            <div class="stat-num">2.4M+</div>
+            <div class="stat-label">Acres Optimized</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">38%</div>
+            <div class="stat-label">Yield Uplift</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">61%</div>
+            <div class="stat-label">Water Saved</div>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- ═══════════════ SECTION 2: THE SHIFT ═══════════════ -->
-<section class="shift-section" id="solutions">
+      <!-- RIGHT – Dashboard Image -->
+      <div class="hero-right">
+        <div class="glow-blob"></div>
+
+        <div class="dashboard-wrapper">
+          <!-- Main dashboard image – replace src with your actual screenshot/mockup -->
+          <img
+            class="dashboard-img"
+            src="resource/Hero-banner.png"
+            alt="VerdantFarm Live Dashboard"
+          />
+
+          <!-- Floating badge: CO2 Offset -->
+          <div class="badge-co2">
+            <img src="resource/div.absolute (1).png" alt="" />
+          </div>
+
+          <!-- Floating badge: Smart Irrigation -->
+          <div class="badge-irrigation">
+            <img src="resource/div.absolute (5).png" alt="" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ SECTION 2: THE SHIFT ═══════════════ -->
+    <section class="shift-section" id="solutions">
+      <!-- Header -->
+      <div class="shift-header">
+        <p class="shift-eyebrow">The Shift</p>
+        <h2 class="shift-title">
+          From <span class="faded">guesswork</span> to guided<br />growth
+        </h2>
+      </div>
+
+      <!-- Two-column card grid -->
+      <div class="shift-grid">
+        <!-- ── LEFT: Traditional Farming ── -->
+        <div class="card card-traditional">
+          <p class="card-label">Traditional farming</p>
+
+          <!-- Row 1 -->
+          <div class="feature-row">
+            <img src="resource/pink-icon-1.png" alt="Water waste icon" />
+            <div class="feature-text">
+              <p class="feature-title">Water waste</p>
+              <p class="feature-desc">
+                Manual irrigation drains millions of liters every season.
+              </p>
+            </div>
+          </div>
+
+          <!-- Row 2 -->
+          <div class="feature-row">
+            <img src="resource/pink-icon-2.png" alt="Monitoring icon" />
+            <div class="feature-text">
+              <p class="feature-title">Difficult monitoring</p>
+              <p class="feature-desc">
+                Walking acres to check fields is slow and error-prone.
+              </p>
+            </div>
+          </div>
+
+          <!-- Row 3 -->
+          <div class="feature-row">
+            <img src="resource/pink-icon-3.png" alt="Weather icon" />
+            <div class="feature-text">
+              <p class="feature-title">Unpredictable weather</p>
+              <p class="feature-desc">
+                Sudden shifts ruin yields without early warning.
+              </p>
+            </div>
+          </div>
+
+          <!-- Row 4 -->
+          <div class="feature-row">
+            <img src="resource/pink-icon-4.png" alt="Disease icon" />
+            <div class="feature-text">
+              <p class="feature-title">Slow disease detection</p>
+              <p class="feature-desc">
+                By the time disease is visible, the damage is done.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- END traditional -->
+
+        <!-- ── RIGHT: VerdantFarm Smart Farming ── -->
+        <div class="card card-smart">
+          <p class="card-label">VerdantFarm Smart Farming</p>
+
+          <!-- Row 1 -->
+          <div class="feature-row">
+            <img
+              src="resource/green-icon-1.png"
+              alt="AI weather icon"
+              class="shadow-icon"
+            />
+            <div class="feature-text">
+              <p class="feature-title">AI weather prediction</p>
+              <p class="feature-desc">
+                72-hour forecasts tuned to your micro-climate.
+              </p>
+            </div>
+          </div>
+
+          <!-- Row 2 -->
+          <div class="feature-row">
+            <img
+              src="resource/green-icon-2.png"
+              alt="Irrigation icon"
+              class="shadow-icon"
+            />
+            <div class="feature-text">
+              <p class="feature-title">Smart irrigation</p>
+              <p class="feature-desc">
+                Adaptive drip schedules cut water use by 60%.
+              </p>
+            </div>
+          </div>
+
+          <!-- Row 3 -->
+          <div class="feature-row">
+            <img
+              src="resource/green-icon-3.png"
+              alt="Crop monitoring icon"
+              class="shadow-icon"
+            />
+            <div class="feature-text">
+              <p class="feature-title">Real-time crop monitoring</p>
+              <p class="feature-desc">
+                Multispectral imagery refreshed every 6 hours.
+              </p>
+            </div>
+          </div>
+
+          <!-- Row 4 -->
+          <div class="feature-row">
+            <img
+              src="resource/green-icon-4.png "
+              alt="Analytics icon"
+              class="shadow-icon"
+            />
+            <div class="feature-text">
+              <p class="feature-title">Automated analytics</p>
+              <p class="feature-desc">
+                Decisions delivered, not dashboards to decode.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- END smart -->
+      </div>
+      <!-- END grid -->
+    </section>
+
+    <!-- ═══════════════ SECTION 3: PLATFORM ═══════════════ -->
+    <section class="platform-section" id="features" data-nav="features">
+      <!-- Header -->
+      <div class="platform-header">
+        <p class="platform-eyebrow">Platform</p>
+        <h2 class="platform-title">
+          Every acre,
+          <span class="grad-word">orchestrated</span> by<br />intelligence
+        </h2>
+        <p class="platform-sub">
+          A single operating system for the modern farm — from satellite to
+          soil, from sensor to spreadsheet.
+        </p>
+      </div>
+
+      <!-- Bento Grid -->
+      <div class="bento-grid">
+        <!-- Row 1, Col 1–2: WIDE card -->
+        <div class="bento-card wide">
+          <!-- Replace src with your actual icon -->
+          <img
+            src="resource/feature-icon-1.png"
+            alt="AI Weather"
+            class="feature-icon"
+          />
+          <p class="card-title">AI Weather Prediction</p>
+          <p class="card-desc">
+            Hyperlocal forecasts powered by 14 atmospheric models.
+          </p>
+        </div>
+
+        <!-- Row 1, Col 3: normal card -->
+        <div class="bento-card">
+          <img
+            src="resource/feature-icon-2.png"
+            alt="Smart Irrigation"
+            class="feature-icon"
+          />
+          <p class="card-title">Smart Irrigation</p>
+          <p class="card-desc">Valve-level automation tuned to soil sensors.</p>
+        </div>
+
+        <!-- Row 2, Col 1 -->
+        <div class="bento-card">
+          <img
+            src="resource/feature-icon-3.png"
+            alt="Crop Analytics"
+            class="feature-icon"
+          />
+          <p class="card-title">Crop Analytics</p>
+          <p class="card-desc">Yield, NDVI, biomass — unified in one panel.</p>
+        </div>
+
+        <!-- Row 2, Col 2–3: WIDE card -->
+        <div class="bento-card wide">
+          <img
+            src="resource/feature-icon-4.png"
+            alt="Drone Monitoring"
+            class="feature-icon"
+          />
+          <p class="card-title">Drone Monitoring</p>
+          <p class="card-desc">
+            Autonomous fly-overs with vision-grade imaging.
+          </p>
+        </div>
+
+        <!-- Row 3, Col 1–2: WIDE card -->
+        <div class="bento-card">
+          <img
+            src="resource/feature-icon-5.png"
+            alt="AI Disease Detection"
+            class="feature-icon"
+          />
+          <p class="card-title">AI Disease Detection</p>
+          <p class="card-desc">
+            Identify 240+ pathogens before symptoms spread.
+          </p>
+        </div>
+
+        <!-- Row 3, Col 3 -->
+        <div class="bento-card wide">
+          <img
+            src="resource/feature-icon-6.png"
+            alt="Smart Notification"
+            class="feature-icon"
+          />
+          <p class="card-title">Smart Notification</p>
+          <p class="card-desc">Context-aware alerts that respect your time.</p>
+        </div>
+      </div>
+      <!-- END bento-grid -->
+    </section>
+
+    <!-- ═══════════════ SECTION 4: HOW IT WORKS ═══════════════ -->
+    <section class="how-section" id="results" data-nav="results">
+      <div class="how-header">
+        <p class="how-eyebrow">How It Works</p>
+        <h2 class="how-title">
+          Three steps. <span class="grad-accent">Zero guesswork.</span>
+        </h2>
+      </div>
+
+      <div class="steps-row">
+        <!-- Step 01 -->
+        <div class="step-item">
+          <div class="step-img-wrap">
+            <div class="step-badge">01</div>
+            <!-- Replace src with your actual icon image -->
+            <img class="step-img" src="resource/Icon-1.png" alt="Sensors" />
+          </div>
+          <p class="step-title">Sensors collect data</p>
+          <p class="step-desc">
+            IoT probes, drones, and satellites stream real-time field telemetry
+            every minute.
+          </p>
+        </div>
+
+        <!-- Step 02 -->
+        <div class="step-item">
+          <div class="step-img-wrap">
+            <div class="step-badge">02</div>
+            <img class="step-img" src="resource/Icon-2.png" alt="AI" />
+          </div>
+          <p class="step-title">AI analyzes conditions</p>
+          <p class="step-desc">
+            Models cross-reference 120+ signals to detect risk, growth, and
+            yield trajectory.
+          </p>
+        </div>
+
+        <!-- Step 03 -->
+        <div class="step-item">
+          <div class="step-img-wrap">
+            <div class="step-badge">03</div>
+            <img class="step-img" src="resource/Icon-3.png" alt="Farmers" />
+          </div>
+          <p class="step-title">Farmers act with clarity</p>
+          <p class="step-desc">
+            Actionable recommendations land in your inbox, console, or mobile
+            app.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ SECTION 5: IMPACT ═══════════════ -->
+    <section class="impact-section" id="impact" data-nav="impact">
+      <div class="impact-header">
+        <p class="impact-eyebrow">Impact</p>
+        <h2 class="impact-title">
+          Numbers from <span class="grad-accent">real fields</span>
+        </h2>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-number">
+            <span class="count-up" data-target="40">0</span>%
+          </div>
+          <p class="stat-label">Water efficiency</p>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-number">
+            <span class="count-up" data-target="25">0</span>%
+          </div>
+          <p class="stat-label">Increased harvest</p>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-number">
+            <span class="count-up" data-target="60">0</span>%
+          </div>
+          <p class="stat-label">Faster monitoring</p>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-number">
+            <span class="count-up" data-target="90">0</span>%
+          </div>
+          <p class="stat-label">Better crop insights</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ SECTION: TESTIMONIALS ═══════════════ -->
+<section class="testi-section" id="testimonials" data-nav="testimonials">
 
   <!-- Header -->
-  <div class="shift-header">
-    <p class="shift-eyebrow">The Shift</p>
-    <h2 class="shift-title">
-      From <span class="faded">guesswork</span> to guided<br>growth
+  <div class="testi-header">
+    <p class="testi-eyebrow">Trusted by Growers</p>
+    <h2 class="testi-title">
+      Loved by the farmers <span class="grad-word">building tomorrow</span>
     </h2>
   </div>
 
-  <!-- Two-column card grid -->
-  <div class="shift-grid">
+  <!-- Cards -->
+  <div class="testi-grid">
 
-    <!-- ── LEFT: Traditional Farming ── -->
-    <div class="card card-traditional">
-      <p class="card-label">Traditional farming</p>
-
-      <!-- Row 1 -->
-      <div class="feature-row">
-        <img src="resource/pink-icon-1.png" alt="Water waste icon" />
-        <div class="feature-text">
-          <p class="feature-title">Water waste</p>
-          <p class="feature-desc">Manual irrigation drains millions of liters every season.</p>
+    <!-- Card 1 -->
+    <div class="testi-card">
+      <span class="quote-icon">
+        <img src="resource/quote.png" alt="">
+      </span>
+      <p class="testi-quote">
+        "VerdantFarm helped us improve crop productivity while reducing water usage by nearly 60%. It paid back in one season."
+      </p>
+      <div class="testi-divider"></div>
+      <div class="testi-author">
+        <!-- Replace src with actual avatar image -->
+        <img
+          class="author-avatar"
+          src="resource/pp-testimoni-1.png"
+          alt="María González"
+        />
+        <div class="author-info">
+          <p class="author-name">María González</p>
+          <p class="author-role">Owner · Viña del Sol Farms</p>
         </div>
       </div>
-
-      <!-- Row 2 -->
-      <div class="feature-row">
-          <img src="resource/pink-icon-2.png" alt="Monitoring icon" />
-        <div class="feature-text">
-          <p class="feature-title">Difficult monitoring</p>
-          <p class="feature-desc">Walking acres to check fields is slow and error-prone.</p>
-        </div>
-      </div>
-
-      <!-- Row 3 -->
-      <div class="feature-row">
-        <img src="resource/pink-icon-3.png" alt="Weather icon" />
-        <div class="feature-text">
-          <p class="feature-title">Unpredictable weather</p>
-          <p class="feature-desc">Sudden shifts ruin yields without early warning.</p>
-        </div>
-      </div>
-
-      <!-- Row 4 -->
-      <div class="feature-row">
-        <img src="resource/pink-icon-4.png" alt="Disease icon" />
-        <div class="feature-text">
-          <p class="feature-title">Slow disease detection</p>
-          <p class="feature-desc">By the time disease is visible, the damage is done.</p>
-        </div>
-      </div>
-
     </div>
-    <!-- END traditional -->
 
-    <!-- ── RIGHT: VerdantAI Smart Farming ── -->
-    <div class="card card-smart">
-      <p class="card-label">VerdantAI Smart Farming</p>
-
-      <!-- Row 1 -->
-      <div class="feature-row">
-          <img src="resource/green-icon-1.png" alt="AI weather icon" class="shadow-icon"/>
-        <div class="feature-text">
-          <p class="feature-title">AI weather prediction</p>
-          <p class="feature-desc">72-hour forecasts tuned to your micro-climate.</p>
+    <!-- Card 2 (featured / elevated) -->
+    <div class="testi-card featured">
+      <span class="quote-icon">
+        <img src="resource/quote.png" alt="">
+      </span>
+      <p class="testi-quote">
+        "The AI recommendations feel like having an agronomist on call 24/7 — except they actually know my fields."
+      </p>
+      <div class="testi-divider"></div>
+      <div class="testi-author">
+        <img
+          class="author-avatar"
+          src="resource/pp-testimoni-2.png"
+          alt="Daniel Okafor"
+        />
+        <div class="author-info">
+          <p class="author-name">Daniel Okafor</p>
+          <p class="author-role">Operations Lead · GreenAcres Co.</p>
         </div>
       </div>
-
-      <!-- Row 2 -->
-      <div class="feature-row">
-          <img src="resource/green-icon-2.png" alt="Irrigation icon" class="shadow-icon" />
-        <div class="feature-text">
-          <p class="feature-title">Smart irrigation</p>
-          <p class="feature-desc">Adaptive drip schedules cut water use by 60%.</p>
-        </div>
-      </div>
-
-      <!-- Row 3 -->
-      <div class="feature-row">
-        <img src="resource/green-icon-3.png" alt="Crop monitoring icon" class="shadow-icon"/>
-        <div class="feature-text">
-          <p class="feature-title">Real-time crop monitoring</p>
-          <p class="feature-desc">Multispectral imagery refreshed every 6 hours.</p>
-        </div>
-      </div>
-
-      <!-- Row 4 -->
-      <div class="feature-row">
-        <img src="resource/green-icon-4.png " alt="Analytics icon" class="shadow-icon"/>
-        <div class="feature-text">
-          <p class="feature-title">Automated analytics</p>
-          <p class="feature-desc">Decisions delivered, not dashboards to decode.</p>
-        </div>
-      </div>
-
     </div>
-    <!-- END smart -->
+
+    <!-- Card 3 -->
+    <div class="testi-card">
+      <span class="quote-icon">
+        <img src="resource/quote.png" alt="">
+      </span>
+      <p class="testi-quote">
+        "We caught a fungal outbreak 11 days before it would've been visible. That alone saved 80 hectares."
+      </p>
+      <div class="testi-divider"></div>
+      <div class="testi-author">
+        <img
+          class="author-avatar"
+          src="resource/pp-testimoni-3.png"
+          alt="Aiko Tanaka"
+        />
+        <div class="author-info">
+          <p class="author-name">Aiko Tanaka</p>
+          <p class="author-role">Director · Hokkaido AgriTech</p>
+        </div>
+      </div>
+    </div>
 
   </div>
-  <!-- END grid -->
 
 </section>
 
-  <!-- ═══════════════ SCRIPTS ═══════════════ -->
-  <script>
-    // Sticky navbar on scroll
-    $(window).on('scroll', function () {
-      if ($(this).scrollTop() > 30) {
-        $('#navbar').addClass('scrolled');
-      } else {
-        $('#navbar').removeClass('scrolled');
-      }
-    });
-  </script>
+<!-- ═══════════════ SECTION CTA ═══════════════ -->
+<section class="cta-section" id="contact" data-nav="contact">
+  <div class="cta-card">
 
-</body>
+    <!-- Badge -->
+    <div class="cta-badge">
+        <img src="resource/icon-CTA.png" alt="">
+      <span class="badge-label">Limited beta access · 2026 cohort</span>
+    </div>
+
+    <!-- Title -->
+    <h2 class="cta-title">
+      Join the future of <span class="grad-word">agriculture</span><br>today
+    </h2>
+
+    <!-- Subtitle -->
+    <p class="cta-sub">
+      Be among the first 500 farms to deploy VerdantFarm across your operation.
+      Setup in days, results in one season.
+    </p>
+
+    <!-- Buttons -->
+    <div class="cta-buttons">
+      <a href="#" class="btn-cta-primary">
+        Start Smart Farming <span class="arrow">→</span>
+      </a>
+      <a href="#" class="btn-cta-outline">
+        Explore Innovation
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<footer class="site-footer">
+
+  <!-- Top: brand + nav -->
+  <div class="footer-top">
+
+    <!-- Brand -->
+    <div class="footer-brand">
+      <a href="#" class="footer-logo">
+        <!-- Replace src with your logo image -->
+        <img
+          src="resource/Logo.png"
+          alt="VerdantFarm Logo"
+        />
+        <span class="footer-logo-text">Verdant<span>Farm</span></span>
+      </a>
+
+      <p class="footer-desc">
+        The intelligence layer for the modern farm. Built for growers who refuse to choose between yield and the planet.
+      </p>
+
+      <a href="mailto:hello@verdantFarm.io" class="footer-email">
+        <!-- Replace src with your email icon image -->
+        <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png" alt="email" />
+        hello@verdantFarm.io
+      </a>
+    </div>
+
+    <!-- Nav columns -->
+    <nav class="footer-nav">
+
+      <div class="nav-col">
+        <p class="nav-col-heading">Platform</p>
+        <ul>
+          <li><a href="#">Features</a></li>
+          <li><a href="#">Dashboard</a></li>
+          <li><a href="#">Integrations</a></li>
+          <li><a href="#">Changelog</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-col">
+        <p class="nav-col-heading">Solutions</p>
+        <ul>
+          <li><a href="#">Row crops</a></li>
+          <li><a href="#">Vineyards</a></li>
+          <li><a href="#">Greenhouses</a></li>
+          <li><a href="#">Cooperatives</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-col">
+        <p class="nav-col-heading">Company</p>
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Press</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-col">
+        <p class="nav-col-heading">Resources</p>
+        <ul>
+          <li><a href="#">Docs</a></li>
+          <li><a href="#">API</a></li>
+          <li><a href="#">Research</a></li>
+          <li><a href="#">Status</a></li>
+        </ul>
+      </div>
+
+    </nav>
+  </div>
+
+  <!-- Divider -->
+  <hr class="footer-divider" />
+
+  <!-- Bottom: copyright + socials -->
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2026 VerdantFarm Labs</p>
+
+    <div class="footer-socials">
+      <!-- X / Twitter — replace src with your icon -->
+      <a href="#" class="social-btn" aria-label="X (Twitter)">
+        <img src="resource/twiter.png" alt="X" />
+      </a>
+      <!-- Instagram -->
+      <a href="#" class="social-btn" aria-label="Instagram">
+        <img src="resource/instagram.png" alt="Instagram" />
+      </a>
+      <!-- LinkedIn -->
+      <a href="#" class="social-btn" aria-label="LinkedIn">
+        <img src="resource/linkedin.png" alt="LinkedIn" />
+      </a>
+    </div>
+  </div>
+
+</footer>
+
+    <!-- ═══════════════ SCRIPTS ═══════════════ -->
+    <script>
+      // Sticky navbar on scroll
+      $(function () {
+        var counted = false;
+
+        /* ── 1. Sticky navbar on scroll ─────────────────── */
+        $(window).on("scroll.navbar", function () {
+          if ($(this).scrollTop() > 30) {
+            $("#navbar").addClass("scrolled");
+          } else {
+            $("#navbar").removeClass("scrolled");
+          }
+        });
+
+        /* ── 2. Active nav link on scroll (Intersection Observer) ── */
+        // Collect all sections that have an id matching a data-section value
+        const sections = [];
+        $(".nav-link").each(function () {
+          const id = $(this).data("section");
+          if ($("#" + id).length) {
+            sections.push(document.getElementById(id));
+          }
+        });
+
+        // Set a link active by its data-section value
+        function setActive(id) {
+          $(".nav-link").removeClass("active");
+          $('.nav-link[data-section="' + id + '"]').addClass("active");
+        }
+
+        // Use IntersectionObserver so the active link tracks which section
+        // occupies the most screen space — works with smooth scroll too.
+        if ("IntersectionObserver" in window && sections.length) {
+          const visibleRatio = {};
+
+          const observer = new IntersectionObserver(
+            function (entries) {
+              entries.forEach(function (entry) {
+                visibleRatio[entry.target.id] = entry.intersectionRatio;
+              });
+
+              // Pick the section with the highest visible ratio
+              let maxRatio = 0;
+              let activeId = sections[0].id;
+              sections.forEach(function (sec) {
+                const r = visibleRatio[sec.id] || 0;
+                if (r > maxRatio) {
+                  maxRatio = r;
+                  activeId = sec.id;
+                }
+              });
+
+              setActive(activeId);
+            },
+            {
+              threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0],
+            },
+          );
+
+          sections.forEach(function (sec) {
+            observer.observe(sec);
+          });
+        } else {
+          // Fallback for older browsers: scroll-based detection
+          $(window).on("scroll.activenav", function () {
+            const scrollY = $(this).scrollTop() + 80; // offset for fixed navbar
+            let current = sections[0].id;
+
+            sections.forEach(function (sec) {
+              if ($(sec).offset().top <= scrollY) {
+                current = sec.id;
+              }
+            });
+
+            setActive(current);
+          });
+        }
+
+        /* ── 3. Smooth scroll on nav link click ─────────── */
+        $(document).on("click", ".nav-link", function (e) {
+          const target = $(this).attr("href");
+          if (target && target !== "#" && $(target).length) {
+            e.preventDefault();
+            const offset = $(target).offset().top - 80;
+            $("html, body").animate({ scrollTop: offset }, 500, "swing");
+          }
+        });
+
+        function runCountUp() {
+          if (counted) return;
+
+          var impactTop = $("#impact").offset().top;
+          var windowBottom = $(window).scrollTop() + $(window).height();
+
+          if (windowBottom >= impactTop - 80) {
+            counted = true;
+
+            $(".count-up").each(function () {
+              var $el = $(this);
+              var target = parseInt($el.data("target"), 10);
+              var duration = 1800; // ms
+              var start = 0;
+              var startTime = null;
+
+              function step(timestamp) {
+                if (!startTime) startTime = timestamp;
+                var progress = Math.min((timestamp - startTime) / duration, 1);
+                // ease-out cubic
+                var eased = 1 - Math.pow(1 - progress, 3);
+                $el.text(Math.round(eased * target));
+                if (progress < 1) {
+                  requestAnimationFrame(step);
+                } else {
+                  $el.text(target);
+                }
+              }
+
+              requestAnimationFrame(step);
+            });
+          }
+        }
+        $(window).on("scroll.countup", runCountUp);
+        runCountUp();
+      });
+    </script>
+  </body>
 </html>
