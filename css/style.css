@@ -1037,7 +1037,6 @@ body {
 }
 
 .cta-card:hover {
-  transform: translateY(-4px);
   box-shadow: 0 12px 120px 0 rgba(60,218,82,0.2);
 }
 
@@ -1098,7 +1097,7 @@ body {
   color: var(--btn-primary-text);
   background: var(--btn-primary-bg);
   padding: 14px 28px;
-  border-radius: 50px;
+  border-radius: 18px;
   text-decoration: none;
   border: none;
   cursor: pointer;
@@ -1123,7 +1122,7 @@ body {
   color: var(--btn-outline-text);
   background: var(--btn-outline-bg);
   padding: 14px 28px;
-  border-radius: 50px;
+  border-radius: 18px;
   text-decoration: none;
   border: 1px solid var(--btn-outline-border);
   cursor: pointer;
