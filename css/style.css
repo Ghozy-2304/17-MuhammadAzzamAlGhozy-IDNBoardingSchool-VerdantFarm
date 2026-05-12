@@ -1049,7 +1049,7 @@ body::after {
   content: '';
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(circle, var(--grid-dot) 1px, transparent 1px);
+  background-image: radial-gradient(circle, var(--grid-dot) 1px, transparent 5px);
   background-size: 36px 36px;
   pointer-events: none;
   z-index: 0;
@@ -1395,6 +1395,8 @@ body::after {
 
   /* Hero */
   .hero { padding: 90px 20px 48px; }
+  .hero-sub,
+  .hero-title{ text-align: left; }
   .hero-stats { gap: 20px; }
   .badge-co2 { top: -10px; right: -8px; width: 130px; }
   .badge-irrigation { bottom: 10px ; left: -8px; width: 130px; }
