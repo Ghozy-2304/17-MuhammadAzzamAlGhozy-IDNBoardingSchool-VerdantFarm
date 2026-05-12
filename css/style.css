@@ -770,7 +770,7 @@ body {
 .step-img-wrap {
   position: relative;
   width: 110px;
-  height: 110px;
+  height: 80px;
 }
 
 .step-badge {
@@ -798,7 +798,7 @@ body {
 }
 
 .step-img-wrap:hover .step-img {
-  transform: translateY(-5px);
+  /* transform: translateY(-5px); */
   box-shadow: 0 12px 36px rgba(0,0,0,0.28), 0 0 0 1px rgba(61,213,109,0.18);
 }
 
