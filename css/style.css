@@ -1011,7 +1011,7 @@ body {
   overflow: hidden;
   width: 100%;
   max-width: 1120px;
-  transition: box-shadow 0.25s, transform 0.25s;
+  transition: box-shadow 0.25s;
 }
 
 .cta-card::before {
