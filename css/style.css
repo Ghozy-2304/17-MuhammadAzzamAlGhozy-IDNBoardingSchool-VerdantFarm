@@ -1282,7 +1282,7 @@ body {
 }
 
 .social-btn img {
-  width: 18px; height: 18px;
+  width: 38px; height: 38px;
   object-fit: contain;
   filter: brightness(0) invert(1);
   opacity: 0.75;
