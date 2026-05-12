@@ -75,7 +75,7 @@ html { scroll-behavior: smooth; }
 
 body {
   font-family: var(--font-body);
-  background: linear-gradient(135deg, #c9f0da 0%, #ddf5ec 35%, #eaf9f2 65%, #f0fdf6 100%);
+  background: var(--testi-bg);
   min-height: 100vh;
   color: var(--dark);
   overflow-x: hidden;
