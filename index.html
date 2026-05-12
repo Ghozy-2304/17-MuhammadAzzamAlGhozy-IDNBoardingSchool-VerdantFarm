@@ -10,6 +10,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Figtree:wght@300;400;500;600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
 
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
@@ -418,60 +421,28 @@
 
     <!-- ═══════════════ SCRIPTS ═══════════════ -->
     <script>
-      (function () {
+      $(function () {
         var counted = false;
 
         /* ── 1. Sticky navbar on scroll ── */
-        window.addEventListener('scroll', function () {
-          var navbar = document.getElementById('navbar');
-          if (window.scrollY > 30) {
-            navbar.classList.add('scrolled');
+        $(window).on('scroll.navbar', function () {
+          if ($(this).scrollTop() > 30) {
+            $('#navbar').addClass('scrolled');
           } else {
-            navbar.classList.remove('scrolled');
+            $('#navbar').removeClass('scrolled');
           }
-          runCountUp();
         });
 
-        /* ── 2. Hamburger menu ── */
-        var hamburger = document.getElementById('hamburger');
-        var mobileMenu = document.getElementById('mobile-menu');
-
-        hamburger.addEventListener('click', function () {
-          var isOpen = hamburger.classList.toggle('open');
-          mobileMenu.classList.toggle('open');
-          hamburger.setAttribute('aria-expanded', isOpen);
-          document.body.style.overflow = isOpen ? 'hidden' : '';
-        });
-
-        /* ── 3. Smooth scroll — desktop & mobile links ── */
-        document.querySelectorAll('.nav-link, .mobile-nav-link').forEach(function (link) {
-          link.addEventListener('click', function (e) {
-            var target = this.getAttribute('href');
-            if (target && target !== '#' && document.querySelector(target)) {
-              e.preventDefault();
-              var offset = document.querySelector(target).getBoundingClientRect().top + window.scrollY - 80;
-              window.scrollTo({ top: offset, behavior: 'smooth' });
-              // Close mobile menu
-              hamburger.classList.remove('open');
-              mobileMenu.classList.remove('open');
-              hamburger.setAttribute('aria-expanded', false);
-              document.body.style.overflow = '';
-            }
-          });
-        });
-
-        /* ── 4. Active nav on scroll (IntersectionObserver) ── */
+        /* ── 2. Active nav link on scroll (IntersectionObserver) ── */
         var sections = [];
-        document.querySelectorAll('.nav-link').forEach(function (link) {
-          var id = link.dataset.section;
-          var el = document.getElementById(id);
-          if (el) sections.push(el);
+        $('.nav-link').each(function () {
+          var id = $(this).data('section');
+          if ($('#' + id).length) sections.push(document.getElementById(id));
         });
 
         function setActive(id) {
-          document.querySelectorAll('.nav-link').forEach(function (l) { l.classList.remove('active'); });
-          var active = document.querySelector('.nav-link[data-section="' + id + '"]');
-          if (active) active.classList.add('active');
+          $('.nav-link').removeClass('active');
+          $('.nav-link[data-section="' + id + '"]').addClass('active');
         }
 
         if ('IntersectionObserver' in window && sections.length) {
@@ -488,32 +459,65 @@
             setActive(activeId);
           }, { threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0] });
           sections.forEach(function (sec) { observer.observe(sec); });
+        } else {
+          $(window).on('scroll.activenav', function () {
+            var scrollY = $(this).scrollTop() + 80;
+            var current = sections[0].id;
+            sections.forEach(function (sec) {
+              if ($(sec).offset().top <= scrollY) current = sec.id;
+            });
+            setActive(current);
+          });
         }
+
+        /* ── 3. Smooth scroll on nav link click ── */
+        $(document).on('click', '.nav-link, .mobile-nav-link', function (e) {
+          var target = $(this).attr('href');
+          if (target && target !== '#' && $(target).length) {
+            e.preventDefault();
+            var offset = $(target).offset().top - 90;
+            $('html, body').animate({ scrollTop: offset }, 500, 'swing');
+            // Tutup mobile menu
+            $('#hamburger').removeClass('open').attr('aria-expanded', false);
+            $('#mobile-menu').removeClass('open');
+            $('body').css('overflow', '');
+          }
+        });
+
+        /* ── 4. Hamburger menu ── */
+        $('#hamburger').on('click', function () {
+          var isOpen = $(this).toggleClass('open').hasClass('open');
+          $('#mobile-menu').toggleClass('open');
+          $(this).attr('aria-expanded', isOpen);
+          $('body').css('overflow', isOpen ? 'hidden' : '');
+        });
 
         /* ── 5. Count-up animation ── */
         function runCountUp() {
           if (counted) return;
-          var impact = document.getElementById('impact');
-          if (!impact) return;
-          if (window.scrollY + window.innerHeight >= impact.offsetTop - 80) {
+          var impactTop = $('#impact').offset().top;
+          var windowBottom = $(window).scrollTop() + $(window).height();
+          if (windowBottom >= impactTop - 80) {
             counted = true;
-            document.querySelectorAll('.count-up').forEach(function (el) {
-              var target = parseInt(el.dataset.target, 10);
+            $('.count-up').each(function () {
+              var $el = $(this);
+              var target = parseInt($el.data('target'), 10);
               var duration = 1800, startTime = null;
-              function step(ts) {
-                if (!startTime) startTime = ts;
-                var progress = Math.min((ts - startTime) / duration, 1);
+              function step(timestamp) {
+                if (!startTime) startTime = timestamp;
+                var progress = Math.min((timestamp - startTime) / duration, 1);
                 var eased = 1 - Math.pow(1 - progress, 3);
-                el.textContent = Math.round(eased * target);
+                $el.text(Math.round(eased * target));
                 if (progress < 1) requestAnimationFrame(step);
-                else el.textContent = target;
+                else $el.text(target);
               }
               requestAnimationFrame(step);
             });
           }
         }
+        $(window).on('scroll.countup', runCountUp);
         runCountUp();
-      })();
+      });
     </script>
   </body>
 </html>
