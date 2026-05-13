@@ -287,6 +287,11 @@ body::after {
   padding: 0;
 }
 
+.mobile-menu hr {
+  border: 0;
+  border-top: 1px solid #E9EAEB;
+}
+
 .mobile-nav-link {
   display: block;
   font-family: var(--font-body);
@@ -306,7 +311,7 @@ body::after {
 }
 
 .mobile-signin {
-  margin: 8px 16px 0;
+  margin: 16px 16px 0 16px;
   font-size: 15px;
   padding: 14px;
   text-align: center;
@@ -1398,7 +1403,7 @@ body::after {
   .mobile-menu { left: 70vw; top: 80px;}
 
   /* Hero */
-  .hero { padding: 90px 20px 48px; }
+  .hero { padding: 60px 20px; }
   .hero-sub,
   .hero-title{ text-align: left; }
   .hero-stats { gap: 20px; }
@@ -1409,8 +1414,8 @@ body::after {
   .shift-section,
   .platform-section,
   .how-section,
-  .impact-section { padding: 64px 20px; }
-  .testi-section { padding: 64px 20px 80px; }
+  .impact-section,
+  .testi-section { padding: 60px 20px; }
 
   /* Bento */
   .bento-grid { grid-template-columns: 1fr; }
