@@ -1403,7 +1403,7 @@ body::after {
   .mobile-menu { left: 70vw; top: 80px;}
 
   /* Hero */
-  .hero { padding: 60px 20px; }
+  .hero { padding: 100px 20px 60px; }
   .hero-sub,
   .hero-title{ text-align: left; }
   .hero-stats { gap: 20px; }
