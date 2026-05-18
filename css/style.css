@@ -1,6 +1,3 @@
-/* ══════════════════════════════════════════════════
-   RESET & VARIABLES
-══════════════════════════════════════════════════ */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -20,7 +17,6 @@
   --font-hero:       "Space Grotesk", sans-serif;
   --font-body:       "Figtree", sans-serif;
 
-  /* Section backgrounds */
   --s3-bg:           #f7f9f8;
   --s4-bg-from:      #1a4a2e;
   --s4-bg-to:        #0f3320;
@@ -31,7 +27,6 @@
   --s5-text-muted:   #7a8b82;
   --text-sub:        #7a8b82;
 
-  /* Cards */
   --card-grad-dir:   135deg;
   --card-grad-from:  #ffffff;
   --card-grad-to:    #ebf9f2;
@@ -39,7 +34,6 @@
   --card-border-hover: rgba(61,213,109,0.32);
   --card-bg:         #ffffff;
 
-  /* CTA section */
   --page-bg:         #F2F7F4;
   --cta-card-bg:     #0D2E1A;
   --cta-card-radius: 18px;
@@ -59,7 +53,6 @@
   --btn-outline-border: rgba(255,255,255,0.20);
   --btn-outline-text:#ffffff;
 
-  /* Footer */
   --footer-bg:        #0D2818;
   --footer-text:      rgba(255,255,255,0.85);
   --footer-muted:     rgba(255,255,255,0.45);
@@ -108,9 +101,6 @@ body::after {
   z-index: 100;
 }
 
-/* ══════════════════════════════════════════════════
-   NAVBAR
-══════════════════════════════════════════════════ */
 .navbar {
   position: fixed;
   top: 18px;
@@ -211,7 +201,6 @@ body::after {
   box-shadow: 0 6px 24px rgba(61,213,109,0.4);
 }
 
-/* ── Hamburger ── */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -248,12 +237,10 @@ body::after {
   transform-origin: center;
 }
 
-/* Hamburger → X animation */
 .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
 .hamburger.open span:nth-child(2) { opacity: 0; width: 0; }
 .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-/* ── Mobile Menu ── */
 .mobile-menu {
   position: fixed;
   top: 100px;
@@ -320,9 +307,6 @@ body::after {
   box-shadow: none;
 }
 
-/* ══════════════════════════════════════════════════
-   HERO
-══════════════════════════════════════════════════ */
 .hero {
   min-height: 100vh;
   display: flex;
@@ -500,9 +484,6 @@ body::after {
   50%       { transform: translateY(-8px); }
 }
 
-/* ══════════════════════════════════════════════════
-   THE SHIFT
-══════════════════════════════════════════════════ */
 .shift-section {
   width: 100%;
   padding: 110px 80px;
@@ -618,9 +599,6 @@ body::after {
   line-height: 1.55;
 }
 
-/* ══════════════════════════════════════════════════
-   PLATFORM
-══════════════════════════════════════════════════ */
 .platform-section {
   width: 100%;
   padding: 110px 80px;
@@ -720,9 +698,6 @@ body::after {
   color: var(--text-muted);
 }
 
-/* ══════════════════════════════════════════════════
-   HOW IT WORKS
-══════════════════════════════════════════════════ */
 .how-section {
   width: 100%;
   padding: 110px 80px;
@@ -836,7 +811,6 @@ body::after {
 }
 
 .step-img-wrap:hover .step-img {
-  /* transform: translateY(-5px); */
   box-shadow: 0 12px 36px rgba(0,0,0,0.28), 0 0 0 1px rgba(61,213,109,0.18);
 }
 
@@ -856,9 +830,6 @@ body::after {
   padding: 0 8px;
 }
 
-/* ══════════════════════════════════════════════════
-   IMPACT
-══════════════════════════════════════════════════ */
 .impact-section {
   width: 100%;
   padding: 110px 80px;
@@ -926,9 +897,6 @@ body::after {
 
 .count-up { display: inline-block; }
 
-/* ══════════════════════════════════════════════════
-   TESTIMONIALS
-══════════════════════════════════════════════════ */
 .testi-section {
   width: 100%;
   padding: 100px 60px 110px;
@@ -1028,9 +996,6 @@ body::after {
   line-height: 1.2;
 }
 
-/* ══════════════════════════════════════════════════
-   CTA
-══════════════════════════════════════════════════ */
 .cta-section {
   width: 100%;
   background-color: var(--testi-bg);
@@ -1173,9 +1138,6 @@ body::after {
   transform: translateY(-2px);
 }
 
-/* ══════════════════════════════════════════════════
-   FOOTER
-══════════════════════════════════════════════════ */
 .site-footer {
   width: 100%;
   background: var(--footer-bg);
@@ -1327,9 +1289,6 @@ body::after {
 
 .social-btn:hover img { opacity: 1; }
 
-/* ══════════════════════════════════════════════════
-   RESPONSIVE — TABLET (≤ 1024px)
-══════════════════════════════════════════════════ */
 @media (max-width: 1024px) {
   .shift-section,
   .platform-section,
@@ -1341,11 +1300,7 @@ body::after {
   .footer-nav { gap: 32px; }
 }
 
-/* ══════════════════════════════════════════════════
-   RESPONSIVE — MOBILE LARGE (≤ 900px)
-══════════════════════════════════════════════════ */
 @media (max-width: 900px) {
-  /* Navbar */
   body::before,
   body::after {
     content: none;
@@ -1355,7 +1310,6 @@ body::after {
   .hamburger { display: flex; }
   .mobile-menu { left: 85vw; top: 100px;  }
 
-  /* Hero */
   .hero {
     flex-direction: column;
     padding: 100px 24px 60px;
@@ -1368,76 +1322,54 @@ body::after {
   .hero-stats { justify-content: center; gap: 28px; }
   .hero-right { width: 100%; max-width: 480px; }
 
-  /* Shift */
   .shift-grid { grid-template-columns: 1fr; }
   .card { padding: 32px 28px; }
 
-  /* Bento */
   .bento-grid { grid-template-columns: 1fr 1fr; }
   .bento-card.wide { grid-column: span 2; }
 
-  /* How */
   .steps-row { flex-direction: column; align-items: center; gap: 40px; }
   .steps-row::before { display: none; }
 
-  /* Stats */
   .stats-grid { grid-template-columns: 1fr 1fr; }
 
-  /* Testimonials */
   .testi-grid { grid-template-columns: 1fr; max-width: 500px; }
 
-  /* Footer */
   .site-footer { padding: 60px 24px 0; }
   .footer-top { flex-direction: column; gap: 40px; }
   .footer-brand { max-width: 100%; }
 }
 
-/* ══════════════════════════════════════════════════
-   RESPONSIVE — MOBILE (≤ 600px)
-══════════════════════════════════════════════════ */
 @media (max-width: 600px) {
-  /* Navbar */
-  .navbar { width: calc(100% - 24px); top: 12px; height: 60px; padding: 8px 16px; box-sizing: border-box;
- }
+  .navbar { width: calc(100% - 24px); top: 12px; height: 60px; padding: 8px 16px; box-sizing: border-box; }
   .btn-signin:not(.mobile-signin) { display: none; }
-  .mobile-menu { left: 70vw; top: 80px;}
+  .mobile-menu { left: 70vw; top: 80px; }
 
-  /* Hero */
   .hero { padding: 100px 20px 60px; }
   .hero-sub,
-  .hero-title{ text-align: left; }
+  .hero-title { text-align: left; }
   .hero-stats { gap: 20px; }
   .badge-co2 { top: -10px; right: -8px; width: 130px; }
-  .badge-irrigation { bottom: 10px ; left: -8px; width: 130px; }
+  .badge-irrigation { bottom: 10px; left: -8px; width: 130px; }
 
-  /* Sections */
   .shift-section,
   .platform-section,
   .how-section,
   .impact-section,
   .testi-section { padding: 60px 20px; }
 
-  /* Bento */
   .bento-grid { grid-template-columns: 1fr; }
   .bento-card.wide { grid-column: span 1; }
   .bento-card { padding: 28px 24px; }
 
-  /* How */
   .step-item { max-width: 280px; width: 100%; }
-
-  /* CTA */
   .cta-card { padding: 48px 24px 44px; }
   .cta-buttons { flex-direction: column; align-items: stretch; }
   .btn-cta-primary, .btn-cta-outline { justify-content: center; }
-
-  /* Footer */
   .footer-nav { gap: 24px; }
   .footer-bottom { flex-direction: column; gap: 20px; align-items: flex-start; }
 }
 
-/* ══════════════════════════════════════════════════
-   RESPONSIVE — MOBILE SMALL (≤ 420px)
-══════════════════════════════════════════════════ */
 @media (max-width: 420px) {
   .mobile-nav-link { font-size: 18px; }
   .hero-cta { flex-direction: column; align-items: stretch; }

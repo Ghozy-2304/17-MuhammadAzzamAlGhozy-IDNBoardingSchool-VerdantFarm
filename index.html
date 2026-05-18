@@ -12,14 +12,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Figtree:wght@300;400;500;600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
 
-    <!-- jQuery -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https:
 
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
 
-    <!-- ═══════════════ NAVBAR ═══════════════ -->
     <nav class="navbar" id="navbar">
       <a href="#" class="nav-logo">
         <img src="resource/Logo.png" alt="VerdantFarm Logo" class="img-logo" />
@@ -43,7 +41,6 @@
       </div>
     </nav>
 
-    <!-- Mobile Menu Overlay -->
     <div class="mobile-menu" id="mobile-menu">
       <ul class="mobile-nav-links">
         <li><a href="#home" class="mobile-nav-link" data-section="home">Home</a></li>
@@ -57,7 +54,6 @@
       <a href="#" class="btn-signin mobile-signin">Sign In</a>
     </div>
 
-    <!-- ═══════════════ HERO ═══════════════ -->
     <section class="hero" id="home">
       <div class="hero-left">
         <h1 class="hero-title">
@@ -104,7 +100,6 @@
       </div>
     </section>
 
-    <!-- ═══════════════ THE SHIFT ═══════════════ -->
     <section class="shift-section" id="solutions">
       <div class="shift-header">
         <p class="shift-eyebrow">The Shift</p>
@@ -178,7 +173,6 @@
       </div>
     </section>
 
-    <!-- ═══════════════ PLATFORM ═══════════════ -->
     <section class="platform-section" id="features">
       <div class="platform-header">
         <p class="platform-eyebrow">Platform</p>
@@ -220,7 +214,6 @@
       </div>
     </section>
 
-    <!-- ═══════════════ HOW IT WORKS ═══════════════ -->
     <section class="how-section" id="results">
       <div class="how-header">
         <p class="how-eyebrow">How It Works</p>
@@ -258,7 +251,6 @@
       </div>
     </section>
 
-    <!-- ═══════════════ IMPACT ═══════════════ -->
     <section class="impact-section" id="impact">
       <div class="impact-header">
         <p class="impact-eyebrow">Impact</p>
@@ -285,7 +277,6 @@
       </div>
     </section>
 
-    <!-- ═══════════════ TESTIMONIALS ═══════════════ -->
     <section class="testi-section" id="testimonials">
       <div class="testi-header">
         <p class="testi-eyebrow">Trusted by Growers</p>
@@ -334,7 +325,6 @@
       </div>
     </section>
 
-    <!-- ═══════════════ CTA ═══════════════ -->
     <section class="cta-section" id="contact">
       <div class="cta-card">
         <div class="cta-badge">
@@ -350,7 +340,6 @@
       </div>
     </section>
 
-    <!-- ═══════════════ FOOTER ═══════════════ -->
     <footer class="site-footer">
       <div class="footer-top">
         <div class="footer-brand">
@@ -423,12 +412,10 @@
       </div>
     </footer>
 
-    <!-- ═══════════════ SCRIPTS ═══════════════ -->
     <script>
       $(function () {
         var counted = false;
 
-        /* ── 1. Sticky navbar on scroll ── */
         $(window).on('scroll.navbar', function () {
           if ($(this).scrollTop() > 30) {
             $('#navbar').addClass('scrolled');
@@ -437,7 +424,6 @@
           }
         });
 
-        /* ── 2. Active nav link on scroll (IntersectionObserver) ── */
         var sections = [];
         $('.nav-link').each(function () {
           var id = $(this).data('section');
@@ -474,21 +460,18 @@
           });
         }
 
-        /* ── 3. Smooth scroll on nav link click ── */
         $(document).on('click', '.nav-link, .mobile-nav-link', function (e) {
           var target = $(this).attr('href');
           if (target && target !== '#' && $(target).length) {
             e.preventDefault();
             var offset = $(target).offset().top - 90;
             $('html, body').animate({ scrollTop: offset }, 500, 'swing');
-            // Tutup mobile menu
             $('#hamburger').removeClass('open').attr('aria-expanded', false);
             $('#mobile-menu').removeClass('open');
             $('body').css('overflow', '');
           }
         });
 
-        /* ── 4. Hamburger menu ── */
         $('#hamburger').on('click', function () {
           var isOpen = $(this).toggleClass('open').hasClass('open');
           $('#mobile-menu').toggleClass('open');
@@ -496,7 +479,6 @@
           $('body').css('overflow', isOpen ? 'hidden' : '');
         });
 
-        /* ── 5. Count-up animation ── */
         function runCountUp() {
           if (counted) return;
           var impactTop = $('#impact').offset().top;
