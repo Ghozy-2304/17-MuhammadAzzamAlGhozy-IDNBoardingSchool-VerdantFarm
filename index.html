@@ -11,8 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Figtree:wght@300;400;500;600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
-
-    <script src="https:
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <link rel="stylesheet" href="css/style.css" />
   </head>
@@ -415,7 +414,6 @@
     <script>
       $(function () {
         var counted = false;
-
         $(window).on('scroll.navbar', function () {
           if ($(this).scrollTop() > 30) {
             $('#navbar').addClass('scrolled');
@@ -423,7 +421,6 @@
             $('#navbar').removeClass('scrolled');
           }
         });
-
         var sections = [];
         $('.nav-link').each(function () {
           var id = $(this).data('section');
@@ -431,7 +428,7 @@
         });
 
         function setActive(id) {
-          $('.nav-link').removeClass('active');
+          // $('.nav-link').removeClass('active');
           $('.nav-link[data-section="' + id + '"]').addClass('active');
         }
 
@@ -466,6 +463,7 @@
             e.preventDefault();
             var offset = $(target).offset().top - 90;
             $('html, body').animate({ scrollTop: offset }, 500, 'swing');
+            // Tutup mobile menu
             $('#hamburger').removeClass('open').attr('aria-expanded', false);
             $('#mobile-menu').removeClass('open');
             $('body').css('overflow', '');
